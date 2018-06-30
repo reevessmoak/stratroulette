@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>GuiApp.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(204,120,50); }
+.s1 { color: rgb(169,183,198); }
+.s2 { color: rgb(104,151,187); }
+.s3 { color: rgb(106,135,89); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+GuiApp.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">com.company</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">java.util.Random</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">java.awt.*</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">java.awt.event.*</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">java.awt.event.ActionListener</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">java.awt.event.ActionEvent</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">java.awt.event.WindowListener</span><span class="s0">;</span><span class="s1"> 
+ 
+ 
+</span><span class="s0">public class </span><span class="s1">GuiApp </span><span class="s0">extends </span><span class="s1">Frame </span><span class="s0">implements </span><span class="s1">WindowListener</span><span class="s0">,</span><span class="s1">ActionListener { 
+    TextField weproll = </span><span class="s0">new </span><span class="s1">TextField(</span><span class="s2">20</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    TextField armroll = </span><span class="s0">new </span><span class="s1">TextField(</span><span class="s2">20</span><span class="s1">)</span><span class="s0">;;</span><span class="s1"> 
+    TextField medroll = </span><span class="s0">new </span><span class="s1">TextField(</span><span class="s2">20</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    TextField vehroll = </span><span class="s0">new </span><span class="s1">TextField(</span><span class="s2">20</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    TextField drzroll = </span><span class="s0">new </span><span class="s1">TextField(</span><span class="s2">20</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    TextField sprroll = </span><span class="s0">new </span><span class="s1">TextField(</span><span class="s2">20</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    Button wepbut = </span><span class="s0">new </span><span class="s1">Button()</span><span class="s0">;</span><span class="s1"> 
+    Button armbut = </span><span class="s0">new </span><span class="s1">Button()</span><span class="s0">;</span><span class="s1"> 
+    Button medbut = </span><span class="s0">new </span><span class="s1">Button()</span><span class="s0">;</span><span class="s1"> 
+    Button vehbut = </span><span class="s0">new </span><span class="s1">Button()</span><span class="s0">;</span><span class="s1"> 
+    Button drzbut = </span><span class="s0">new </span><span class="s1">Button()</span><span class="s0">;</span><span class="s1"> 
+    Button sprbut = </span><span class="s0">new </span><span class="s1">Button()</span><span class="s0">;</span><span class="s1"> 
+ 
+ 
+    </span><span class="s0">private int </span><span class="s1">numClicks = </span><span class="s2">0</span><span class="s0">;</span><span class="s1"> 
+ 
+    </span><span class="s0">public static void </span><span class="s1">main(String[] args) { 
+        GuiApp myWindow = </span><span class="s0">new </span><span class="s1">GuiApp(</span><span class="s3">&quot;Strats for Dem Boys&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        myWindow.setSize(</span><span class="s2">450</span><span class="s0">,</span><span class="s2">125</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        myWindow.setVisible(</span><span class="s0">true</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">GuiApp(String title) { 
+ 
+ 
+ 
+        </span><span class="s0">super</span><span class="s1">(title)</span><span class="s0">;</span><span class="s1"> 
+        setLayout(</span><span class="s0">new </span><span class="s1">FlowLayout())</span><span class="s0">;</span><span class="s1"> 
+        addWindowListener(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        wepbut = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s3">&quot;wep&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        add(wepbut)</span><span class="s0">;</span><span class="s1"> 
+        add(weproll)</span><span class="s0">;</span><span class="s1"> 
+        wepbut.addActionListener(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        armbut = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s3">&quot;arm&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        add(armbut)</span><span class="s0">;</span><span class="s1"> 
+        add(armroll)</span><span class="s0">;</span><span class="s1"> 
+        armbut.addActionListener(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        medbut = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s3">&quot;Med&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        add(medbut)</span><span class="s0">;</span><span class="s1"> 
+        add(medroll)</span><span class="s0">;</span><span class="s1"> 
+        medbut.addActionListener(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        vehbut = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s3">&quot;Veh&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        add(vehbut)</span><span class="s0">;</span><span class="s1"> 
+        add(vehroll)</span><span class="s0">;</span><span class="s1"> 
+        vehbut.addActionListener(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        drzbut = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s3">&quot;drz&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        add(drzbut)</span><span class="s0">;</span><span class="s1"> 
+        add(drzroll)</span><span class="s0">;</span><span class="s1"> 
+        drzbut.addActionListener(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        sprbut = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s3">&quot;Spr&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        add(sprbut)</span><span class="s0">;</span><span class="s1"> 
+        add(sprroll)</span><span class="s0">;</span><span class="s1"> 
+        sprbut.addActionListener(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+ 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">actionPerformed(ActionEvent e) { 
+        </span><span class="s0">if</span><span class="s1">(wepbut == e.getSource()){ 
+                 String[] wepstrats = {</span><span class="s3">&quot;nothing yet&quot;</span><span class="s0">, </span><span class="s3">&quot;wep&quot;</span><span class="s1">}</span><span class="s0">;</span><span class="s1"> 
+                 String wepword = wepstrats[</span><span class="s0">new </span><span class="s1">Random().nextInt(wepstrats.length)]</span><span class="s0">;</span><span class="s1"> 
+                 weproll.setText(wepword)</span><span class="s0">;</span><span class="s1"> 
+             } 
+        </span><span class="s0">else if</span><span class="s1">(armbut == e.getSource()) { 
+                 String[] armstrats = {</span><span class="s3">&quot;nothing yet&quot;</span><span class="s0">, </span><span class="s3">&quot;arm&quot;</span><span class="s1">}</span><span class="s0">;</span><span class="s1"> 
+                 String armword = armstrats[</span><span class="s0">new </span><span class="s1">Random().nextInt(armstrats.length)]</span><span class="s0">;</span><span class="s1"> 
+                 armroll.setText(armword)</span><span class="s0">;</span><span class="s1"> 
+             } 
+        </span><span class="s0">else if</span><span class="s1">(medbut == e.getSource()){ 
+                 String[] medstrats = {</span><span class="s3">&quot;nothing yet&quot;</span><span class="s0">, </span><span class="s3">&quot;med&quot;</span><span class="s1">}</span><span class="s0">;</span><span class="s1"> 
+                 String medword = medstrats[</span><span class="s0">new </span><span class="s1">Random().nextInt(medstrats.length)]</span><span class="s0">;</span><span class="s1"> 
+                 medroll.setText(medword)</span><span class="s0">;</span><span class="s1"> 
+             } 
+        </span><span class="s0">else if</span><span class="s1">(vehbut == e.getSource()){ 
+                 String[] vehstrats = {</span><span class="s3">&quot;nothing yet&quot;</span><span class="s0">, </span><span class="s3">&quot;veh&quot;</span><span class="s1">}</span><span class="s0">;</span><span class="s1"> 
+                 String vehword = vehstrats[</span><span class="s0">new </span><span class="s1">Random().nextInt(vehstrats.length)]</span><span class="s0">;</span><span class="s1"> 
+                 vehroll.setText(vehword)</span><span class="s0">;</span><span class="s1"> 
+        } 
+        </span><span class="s0">else if</span><span class="s1">(drzbut == e.getSource()){ 
+                 String[] drzstrats = {</span><span class="s3">&quot;nothing yet&quot;</span><span class="s0">, </span><span class="s3">&quot;drz&quot;</span><span class="s1">}</span><span class="s0">;</span><span class="s1"> 
+                 String drzword = drzstrats[</span><span class="s0">new </span><span class="s1">Random().nextInt(drzstrats.length)]</span><span class="s0">;</span><span class="s1"> 
+            drzroll.setText(drzword)</span><span class="s0">;</span><span class="s1"> 
+        } 
+        </span><span class="s0">else if</span><span class="s1">(sprbut == e.getSource()){ 
+                 String[] sprstrats = {</span><span class="s3">&quot;nothing yet&quot;</span><span class="s0">, </span><span class="s3">&quot;spr&quot;</span><span class="s1">}</span><span class="s0">;</span><span class="s1"> 
+                 String sprword = sprstrats[</span><span class="s0">new </span><span class="s1">Random().nextInt(sprstrats.length)]</span><span class="s0">;</span><span class="s1"> 
+            sprroll.setText(sprword)</span><span class="s0">;</span><span class="s1"> 
+        } 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">windowClosing(WindowEvent e) { 
+        dispose()</span><span class="s0">;</span><span class="s1"> 
+        System.exit(</span><span class="s2">0</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+ 
+    </span><span class="s0">public void </span><span class="s1">windowOpened(WindowEvent e) {} 
+    </span><span class="s0">public void </span><span class="s1">windowActivated(WindowEvent e) {} 
+    </span><span class="s0">public void </span><span class="s1">windowIconified(WindowEvent e) {} 
+    </span><span class="s0">public void </span><span class="s1">windowDeiconified(WindowEvent e) {} 
+    </span><span class="s0">public void </span><span class="s1">windowDeactivated(WindowEvent e) {} 
+    </span><span class="s0">public void </span><span class="s1">windowClosed(WindowEvent e) {} 
+ 
+}</span></pre>
+</body>
+</html>
